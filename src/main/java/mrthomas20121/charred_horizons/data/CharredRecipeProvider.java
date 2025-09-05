@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
@@ -92,6 +93,12 @@ public class CharredRecipeProvider extends RecipeProvider {
                 .define('D', ItemTags.DIRT)
                 .unlockedBy("has_sulfur_dust", has(CharredTags.Items.DUSTS_SULFUR))
                 .save(consumer);
+
+        smeltingResultFromBase(consumer, CharredBlocks.COBBLED_NETHERRACK.get(), Blocks.NETHERRACK);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, CharredBlocks.COBBLED_NETHERRACK.get(), Blocks.NETHERRACK);
+        smeltingResultFromBase(consumer, Blocks.NETHERRACK, CharredBlocks.POLISHED_NETHERRACK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.NETHERRACK, CharredBlocks.POLISHED_NETHERRACK.get());
+
     }
 
     private Ingredient i(ItemLike itemLike) {

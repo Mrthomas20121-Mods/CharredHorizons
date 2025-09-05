@@ -26,6 +26,10 @@ public class CharredBlockstateProvider extends BlockStateProvider {
         farmland(CharredBlocks.IMPROVED_FARMLAND_BLOCK.get(),
                 new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_dirt"),
                 new ResourceLocation(CharredHorizons.MOD_ID, "block/improved_farmland"));
+
+        simpleBlock(CharredBlocks.COBBLED_NETHERRACK.get());
+        simpleBlock(CharredBlocks.POLISHED_NETHERRACK.get());
+
         simpleBlock(CharredBlocks.EXOTIC_SHROOMLIGHT.get());
 
         simpleBlock(CharredBlocks.DROOPING_VINES.get(), models().cross(CharredHorizons.MOD_ID+":drooping_vines",

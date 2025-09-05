@@ -81,6 +81,9 @@ public class CharredBlocks {
     public static RegistryObject<HugeMushroomBlock> MYSTIC_MUSHROOM_BLOCK = register("mystic_mushroom_block", () -> new HugeMushroomBlock(BlockBehaviour.Properties.copy(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.TERRACOTTA_GREEN).strength(0.2F)));
     public static RegistryObject<HugeMushroomBlock> MYSTIC_MUSHROOM_STEM = register("mystic_mushroom_stem", () -> new HugeMushroomBlock(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM).mapColor(MapColor.TERRACOTTA_GREEN).strength(0.2F)));
 
+    public static RegistryObject<Block> COBBLED_NETHERRACK = register("cobbled_netherrack", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
+    public static RegistryObject<Block> POLISHED_NETHERRACK = register("polished_netherrack", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
+
     private static Boolean always(BlockState p_50810_, BlockGetter p_50811_, BlockPos p_50812_, EntityType<?> p_50813_) {
         return (boolean)true;
     }

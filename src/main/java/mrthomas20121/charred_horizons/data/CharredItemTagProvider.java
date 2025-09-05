@@ -25,6 +25,8 @@ public class CharredItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        tag(Tags.Items.COBBLESTONE).add(CharredBlocks.COBBLED_NETHERRACK.get().asItem());
+
         tag(CharredTags.Items.CURIO_RING).add(CharredItems.GOLD_RING.get(), CharredItems.BLIGHT_RING.get());
         tag(CharredTags.Items.CURIO_CHARM).add(CharredItems.MYSTERIOUS_CHARM.get());
 

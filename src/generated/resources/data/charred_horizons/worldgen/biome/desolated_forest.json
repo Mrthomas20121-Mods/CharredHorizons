@@ -60,24 +60,7 @@
     ]
   ],
   "has_precipitation": false,
-  "spawn_costs": {
-    "charred_horizons:sulfuric_skeleton": {
-      "charge": 0.7,
-      "energy_budget": 0.15
-    },
-    "minecraft:ghast": {
-      "charge": 0.7,
-      "energy_budget": 0.15
-    },
-    "minecraft:piglin": {
-      "charge": 0.7,
-      "energy_budget": 0.15
-    },
-    "minecraft:strider": {
-      "charge": 0.5,
-      "energy_budget": 0.12
-    }
-  },
+  "spawn_costs": {},
   "spawners": {
     "ambient": [],
     "axolotls": [],
@@ -86,28 +69,40 @@
         "type": "minecraft:strider",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 50
+        "weight": 60
       }
     ],
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:ghast",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 60
+        "type": "minecraft:zombified_piglin",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:hoglin",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 9
+      },
+      {
+        "type": "minecraft:piglin",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 5
       },
       {
         "type": "charred_horizons:sulfuric_skeleton",
         "maxCount": 4,
         "minCount": 3,
-        "weight": 10
+        "weight": 5
       },
       {
-        "type": "minecraft:piglin",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 10
+        "type": "charred_horizons:fiery_spider",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 5
       }
     ],
     "underground_water_creature": [],

@@ -48,6 +48,8 @@ public class CharredCreativeTabs {
     }
 
     public static void fillBlockTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out) {
+        out.accept(CharredBlocks.COBBLED_NETHERRACK.get());
+        out.accept(CharredBlocks.POLISHED_NETHERRACK.get());
         out.accept(CharredBlocks.BLIGHT_NYLIUM.get());
         out.accept(CharredBlocks.BLIGHT_NETHER_WART_BLOCK.get());
         out.accept(CharredBlocks.BLIGHT_STEM.get());

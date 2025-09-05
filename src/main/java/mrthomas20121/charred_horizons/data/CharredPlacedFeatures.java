@@ -26,6 +26,7 @@ public class CharredPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MYSTIC_MUSHROOM = createKey("mystic_mushroom");
     public static final ResourceKey<PlacedFeature> MYSTIC_VEGETATION = createKey("mystic_vegetation");
     public static final ResourceKey<PlacedFeature> SHROOMLIGHT = createKey("shroomlight");
+    public static final ResourceKey<PlacedFeature> COBBLED_NETHERRACK = createKey("cobbled_netherrack");
 
     public static ResourceKey<PlacedFeature> createKey(String p_255643_) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -43,6 +44,7 @@ public class CharredPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> DROOPING = configuredFeatures.getOrThrow(CharredConfiguredFeatures.DROOPING_VINES);
         Holder<ConfiguredFeature<?, ?>> MUSHROOM = configuredFeatures.getOrThrow(CharredConfiguredFeatures.MYSTIC_MUSHROOM);
         Holder<ConfiguredFeature<?, ?>> SHROOMLIGHT_CONFIG = configuredFeatures.getOrThrow(CharredConfiguredFeatures.SHROOMLIGHT);
+        Holder<ConfiguredFeature<?, ?>> COBBLED_NETHERRACK_CONFIG = configuredFeatures.getOrThrow(CharredConfiguredFeatures.COBBLED_NETHERRACK);
 
         register(context, BLIGHT_FUNGUS, BLIGHT, CountOnEveryLayerPlacement.of(5), PlacementUtils.filteredByBlockSurvival(CharredBlocks.BLIGHT_NYLIUM.get()), BiomeFilter.biome());
         register(context, WITHERED_FUNGUS, WITHERED, CountOnEveryLayerPlacement.of(2), PlacementUtils.filteredByBlockSurvival(CharredBlocks.WITHERED_NYLIUM.get()), BiomeFilter.biome());
@@ -55,6 +57,8 @@ public class CharredPlacedFeatures {
         register(context, DROOPING_VINES, DROOPING, PlacementUtils.countExtra(10, 0.1f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         register(context, SHROOMLIGHT, SHROOMLIGHT_CONFIG, PlacementUtils.countExtra(2, 0.025f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         register(context, MYSTIC_VINES, VINE, PlacementUtils.countExtra(10, 0.1f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+
+        register(context, COBBLED_NETHERRACK, COBBLED_NETHERRACK_CONFIG, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {

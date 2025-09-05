@@ -47,7 +47,7 @@ public class AddDungeonLootModifier extends LootModifier {
                 int rollCount = this.rolls.sample(randomSource);
                 for (int i = 0; i < rollCount; i++) {
                     boolean isFull = generatedLoot.size() == containerBlockEntity.getContainerSize();
-                    if (!isFull) {
+                    if (!isFull && randomSource.nextBoolean()) {
                         int weight = this.entries.stream().map(entry -> entry.getWeight().asInt()).reduce(0, Integer::sum);
                         WeightedRandom.getRandomItem(randomSource, this.entries, weight).ifPresent(e -> generatedLoot.add(e.getData().copy()));
                     }

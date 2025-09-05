@@ -43,6 +43,13 @@ public class CharredBiomes {
     }
 
     private static Biome fungal_abyss(HolderGetter<PlacedFeature> placedFeatureHolderGetter, HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter) {
+        MobSpawnSettings mobspawnsettings = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SPORE_CREEPER.get(), 20, 5, 5))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 40, 1, 1))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.FIERY_SPIDER.get(), 5, 3, 4))
+                .build();
+
         return biomeDefinition(
                 false,
                 2f,
@@ -57,14 +64,7 @@ public class CharredBiomes {
                         .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CRIMSON_FOREST_MOOD, 6000, 8, 2.0D))
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CRIMSON_FOREST))
                         .build(),
-                new MobSpawnSettings.Builder()
-                        .addMobCharge(CharredEntityTypes.SPORE_CREEPER.get(), 0.7, 0.15)
-                        .addMobCharge(EntityType.GHAST, 0.7, 0.15)
-                        .addMobCharge(EntityType.STRIDER, 0.5, 0.12)
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 60, 1, 1))
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SPORE_CREEPER.get(), 10, 3, 5))
-                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 50, 1, 2))
-                        .build(),
+                mobspawnsettings,
                 new BiomeGenerationSettings.Builder(placedFeatureHolderGetter, configuredWorldCarverHolderGetter)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE)
@@ -89,6 +89,13 @@ public class CharredBiomes {
     }
 
     private static Biome desolated_forest(HolderGetter<PlacedFeature> placedFeatureHolderGetter, HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter) {
+        MobSpawnSettings mobspawnsettings = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIFIED_PIGLIN, 1, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HOGLIN, 9, 3, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN, 5, 3, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SULFURIC_SKELETON.get(), 5, 3, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.FIERY_SPIDER.get(), 5, 3, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2)).build();
         return biomeDefinition(
                 false,
                 2f,
@@ -103,16 +110,7 @@ public class CharredBiomes {
                         .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_CRIMSON_FOREST_MOOD, 6000, 8, 2.0D))
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CRIMSON_FOREST))
                         .build(),
-                new MobSpawnSettings.Builder()
-                        .addMobCharge(EntityType.PIGLIN, 0.7, 0.15)
-                        .addMobCharge(CharredEntityTypes.SULFURIC_SKELETON.get(), 0.7, 0.15)
-                        .addMobCharge(EntityType.GHAST, 0.7, 0.15)
-                        .addMobCharge(EntityType.STRIDER, 0.5, 0.12)
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 60, 1, 1))
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SULFURIC_SKELETON.get(), 10, 3, 4))
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN, 10, 2, 3))
-                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 50, 1, 2))
-                        .build(),
+                mobspawnsettings,
                 new BiomeGenerationSettings.Builder(placedFeatureHolderGetter, configuredWorldCarverHolderGetter)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE)
@@ -137,6 +135,15 @@ public class CharredBiomes {
     }
 
     private static Biome decaying_valley(HolderGetter<PlacedFeature> placedFeatureHolderGetter, HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter) {
+        MobSpawnSettings mobspawnsettings = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 20, 5, 5))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 50, 4, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 1, 4, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
+                .addMobCharge(EntityType.WITHER_SKELETON, 0.7D, 0.15D).addMobCharge(EntityType.GHAST, 0.7D, 0.15D)
+                .addMobCharge(EntityType.ENDERMAN, 0.7D, 0.15D).addMobCharge(EntityType.STRIDER, 0.7D, 0.15D)
+                .build();
+
         return biomeDefinition(
                 false,
                 2f,
@@ -151,14 +158,7 @@ public class CharredBiomes {
                         .ambientMoodSound(new AmbientMoodSettings(SoundEvents.AMBIENT_SOUL_SAND_VALLEY_MOOD, 6000, 8, 2.0D))
                         .backgroundMusic(Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SOUL_SAND_VALLEY))
                         .build(),
-                new MobSpawnSettings.Builder()
-                        .addMobCharge(EntityType.WITHER_SKELETON, 0.7, 0.15)
-                        .addMobCharge(EntityType.STRIDER, 0.7, 0.15)
-                        .addMobCharge(EntityType.GHAST, 0.7, 0.15)
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 50, 4, 4))
-                        .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 20, 3, 3))
-                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 2, 2))
-                        .build(),
+                mobspawnsettings,
                 new BiomeGenerationSettings.Builder(placedFeatureHolderGetter, configuredWorldCarverHolderGetter)
                         .addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE)
                         .addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, NetherPlacements.BASALT_PILLAR)

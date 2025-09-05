@@ -21,6 +21,9 @@ public class CharredLangProvider extends LanguageProvider {
         addEntityType(CharredEntityTypes.SULFURIC_SKELETON, "Sulfuric Skeleton");
         addEntityType(CharredEntityTypes.FIERY_SPIDER, "Fiery Spider");
         addEntityType(CharredEntityTypes.SPORE_CREEPER, "Spore Creeper");
+
+        addBlock(CharredBlocks.COBBLED_NETHERRACK, "cobbled Netherrack");
+        addBlock(CharredBlocks.POLISHED_NETHERRACK, "Polished Netherrack");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
         addBlock(CharredBlocks.DROOPING_VINES, "Drooping Vines");
         addBlock(CharredBlocks.DROOPING_VINES_PLANT, "Drooping Vines Plant");
@@ -77,7 +80,7 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.MYSTERIOUS_CHARM, "Mysterious Charm");
         addItem(CharredItems.BLIGHT_RING, "Blight Ring");
         addItem(CharredItems.GOLD_RING, "Gold Ring");
-        addItem(CharredItems.BLAZE_SLAYER, "Blaze Slayer");
+        addItem(CharredItems.BLAZE_SLAYER, "Blaze Eradicator");
         addItem(CharredItems.WITHERED_SWORD, "Wither Skeleton Sword");
         addItem(CharredItems.FIERY_STRING, "Fiery String");
         addItem(CharredItems.FIERY_BOW, "Fiery Bow");
@@ -86,26 +89,31 @@ public class CharredLangProvider extends LanguageProvider {
         addItem(CharredItems.SULFURIC_BONE_MEAL, "Sulfuric Bone Meal");
         addItem(CharredItems.SULFURIC_SKELETON_EGG, "Sulfuric Skeleton Spawn Egg");
         addItem(CharredItems.FIERY_SPIDER_EGG, "Fiery Spider Spawn Egg");
+        addItem(CharredItems.SPORE_CREEPER_EGG, "Spore Creeper Spawn Egg");
 
         add("item.charred_horizons.fiery_bow.description", "Always crit when enchanted with flame.");
         add("item.charred_horizons.netherite_ring.effect", "Piglins become neutral.");
 
         // advancements
-        add("advancement.charred_horizons.gold_ring", "One ring to rule them all...");
+        add("advancement.charred_horizons.gold_ring", "Ring Bearer");
         add("advancement.charred_horizons.gold_ring.desc", "Obtain a Gold Ring from a Fortress or Bastion.");
         add("advancement.charred_horizons.mysterious_charm", "One Step at a time");
         add("advancement.charred_horizons.mysterious_charm.desc", "Obtain a Mysterious charm from a Nether Fortress.");
-        add("advancement.charred_horizons.fiery_bow", "Harder Faster Better Stronger.");
+        add("advancement.charred_horizons.fiery_bow", "Hot, Hot, Hot!");
         add("advancement.charred_horizons.fiery_bow.desc", "Craft a Fiery Bow.");
-        add("advancement.charred_horizons.fiery_spider", "Oh Crap a spider.");
+        add("advancement.charred_horizons.fiery_spider", "Fierce Hunter");
         add("advancement.charred_horizons.fiery_spider.desc", "Kill a Fiery Spider.");
-        add("advancement.charred_horizons.sulfuric_skeleton", "What in Tarnation!");
+        add("advancement.charred_horizons.sulfuric_skeleton", "Mutated Hunter");
         add("advancement.charred_horizons.sulfuric_skeleton.desc", "Kill a Sulfuric Skeleton.");
-        add("advancement.charred_horizons.spore_creeper", "Watch out for the spores.");
+        add("advancement.charred_horizons.spore_creeper", "Spore Hunter");
         add("advancement.charred_horizons.spore_creeper.desc", "Kill a Spore Creeper.");
-        add("advancement.charred_horizons.improved_farmland", "Work Smart, Not Harder.");
+        add("advancement.charred_horizons.improved_farmland", "Improved Farming");
         add("advancement.charred_horizons.improved_farmland.desc", "Craft an Improved Farmland Block.");
-        add("advancements.charred_horizons.explore_nether", "New Horizons!");
+        add("advancements.charred_horizons.explore_nether", "Extra Hot Horizons");
         add("advancements.charred_horizons.explore_nether.description", "Explore all Charred Horizons Nether biomes.");
+
+        add("biome.charred_horizons.decaying_forest", "Decaying Forest");
+        add("biome.charred_horizons.desolated_forest", "Desolated Forest");
+        add("biome.charred_horizons.fungal_abyss", "Fungal Abyss");
     }
 }

@@ -16,6 +16,10 @@ public class CharredBlockLoot extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
+        dropSelf(CharredBlocks.POLISHED_NETHERRACK.get());
+        dropSelf(CharredBlocks.COBBLED_NETHERRACK.get());
+
         this.add(CharredBlocks.BLIGHT_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         this.add(CharredBlocks.MYSTIC_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         this.add(CharredBlocks.WITHERED_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));

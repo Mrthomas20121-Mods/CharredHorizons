@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:nether_wastes",
+  "features": "charred_horizons:cobbled_netherrack",
+  "step": "underground_ores"
+}

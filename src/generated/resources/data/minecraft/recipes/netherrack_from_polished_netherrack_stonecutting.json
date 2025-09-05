@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "charred_horizons:polished_netherrack"
+  },
+  "result": "minecraft:netherrack"
+}

@@ -39,6 +39,7 @@ public class CharredConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> HUGE_MYSTIC_MUSHROOM = createKey("huge_mystic_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYSTIC_MUSHROOM = createKey("mystic_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHROOMLIGHT = createKey("shroomlight");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> COBBLED_NETHERRACK = createKey("cobbled_netherrack");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -82,6 +83,8 @@ public class CharredConfiguredFeatures {
 
         register(context, DROOPING_VINES, CharredFeatures.DROOPING_VINES.get(), FeatureConfiguration.NONE);
         register(context, SHROOMLIGHT, CharredFeatures.SHROOMLIGHT.get(), FeatureConfiguration.NONE);
+
+        register(context, COBBLED_NETHERRACK, Feature.FOREST_ROCK, new BlockStateConfiguration(CharredBlocks.COBBLED_NETHERRACK.get().defaultBlockState()));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
