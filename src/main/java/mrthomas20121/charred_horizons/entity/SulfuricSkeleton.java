@@ -1,5 +1,6 @@
 package mrthomas20121.charred_horizons.entity;
 
+import mrthomas20121.charred_horizons.init.CharredItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -33,12 +34,7 @@ public class SulfuricSkeleton extends AbstractSkeleton {
 
     @Override
     public boolean canFireProjectileWeapon(ProjectileWeaponItem item) {
-
-        if(ForgeRegistries.ITEMS.tags() != null) {
-            return ForgeRegistries.ITEMS.tags().getTag(Tags.Items.TOOLS_BOWS).contains(item);
-        }
-
-        return super.canFireProjectileWeapon(item);
+        return item == CharredItems.FIERY_BOW.get();
     }
 
     protected AbstractArrow getArrow(ItemStack p_33846_, float p_33847_) {

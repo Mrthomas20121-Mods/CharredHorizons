@@ -22,7 +22,7 @@ public class CharredLangProvider extends LanguageProvider {
         addEntityType(CharredEntityTypes.FIERY_SPIDER, "Fiery Spider");
         addEntityType(CharredEntityTypes.SPORE_CREEPER, "Spore Creeper");
 
-        addBlock(CharredBlocks.COBBLED_NETHERRACK, "cobbled Netherrack");
+        addBlock(CharredBlocks.COBBLED_NETHERRACK, "Cobbled Netherrack");
         addBlock(CharredBlocks.POLISHED_NETHERRACK, "Polished Netherrack");
         addBlock(CharredBlocks.EXOTIC_SHROOMLIGHT, "Exotic Shroomlight");
         addBlock(CharredBlocks.DROOPING_VINES, "Drooping Vines");

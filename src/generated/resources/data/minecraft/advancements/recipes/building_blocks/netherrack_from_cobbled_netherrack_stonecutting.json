@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_netherrack": {
+    "has_cobbled_netherrack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:netherrack"
+              "charred_horizons:cobbled_netherrack"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "charred_horizons:cobbled_netherrack"
+        "recipe": "minecraft:netherrack_from_cobbled_netherrack_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_netherrack",
+      "has_cobbled_netherrack",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "charred_horizons:cobbled_netherrack"
+      "minecraft:netherrack_from_cobbled_netherrack_stonecutting"
     ]
   },
   "sends_telemetry_event": false

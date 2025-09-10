@@ -50,7 +50,7 @@ public class CharredPlacedFeatures {
         register(context, WITHERED_FUNGUS, WITHERED, CountOnEveryLayerPlacement.of(2), PlacementUtils.filteredByBlockSurvival(CharredBlocks.WITHERED_NYLIUM.get()), BiomeFilter.biome());
         register(context, BLIGHT_VEGETATION, VEGETATION, CountOnEveryLayerPlacement.of(6), BiomeFilter.biome());
         register(context, MYSTIC_VEGETATION, MYSTIC_VEG, CountOnEveryLayerPlacement.of(6), PlacementUtils.filteredByBlockSurvival(CharredBlocks.MYSTIC_NYLIUM.get()), BiomeFilter.biome());
-        register(context, WITHERED_VEGETATION, WITHERED_VEG, CountOnEveryLayerPlacement.of(4), BiomeFilter.biome());
+        register(context, WITHERED_VEGETATION, WITHERED_VEG, CountOnEveryLayerPlacement.of(3), BiomeFilter.biome());
         register(context, MYSTIC_MUSHROOM, MUSHROOM, CountOnEveryLayerPlacement.of(5), BiomeFilter.biome());
 
         // place vines
@@ -58,7 +58,7 @@ public class CharredPlacedFeatures {
         register(context, SHROOMLIGHT, SHROOMLIGHT_CONFIG, PlacementUtils.countExtra(2, 0.025f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         register(context, MYSTIC_VINES, VINE, PlacementUtils.countExtra(10, 0.1f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
 
-        register(context, COBBLED_NETHERRACK, COBBLED_NETHERRACK_CONFIG, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, COBBLED_NETHERRACK, COBBLED_NETHERRACK_CONFIG, CountOnEveryLayerPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {

@@ -94,10 +94,10 @@ public class CharredRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sulfur_dust", has(CharredTags.Items.DUSTS_SULFUR))
                 .save(consumer);
 
-        smeltingResultFromBase(consumer, CharredBlocks.COBBLED_NETHERRACK.get(), Blocks.NETHERRACK);
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, CharredBlocks.COBBLED_NETHERRACK.get(), Blocks.NETHERRACK);
-        smeltingResultFromBase(consumer, Blocks.NETHERRACK, CharredBlocks.POLISHED_NETHERRACK.get());
-        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.NETHERRACK, CharredBlocks.POLISHED_NETHERRACK.get());
+        smeltingResultFromBase(consumer, Blocks.NETHERRACK, CharredBlocks.COBBLED_NETHERRACK.get());
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, Blocks.NETHERRACK, CharredBlocks.COBBLED_NETHERRACK.get());
+        smeltingResultFromBase(consumer, CharredBlocks.POLISHED_NETHERRACK.get(), Blocks.NETHERRACK);
+        stonecutterResultFromBase(consumer, RecipeCategory.BUILDING_BLOCKS, CharredBlocks.POLISHED_NETHERRACK.get(), Blocks.NETHERRACK);
 
     }
 

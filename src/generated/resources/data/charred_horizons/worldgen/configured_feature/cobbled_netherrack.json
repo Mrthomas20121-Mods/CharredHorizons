@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:forest_rock",
+  "type": "charred_horizons:nether_blob",
   "config": {
     "state": {
       "Name": "charred_horizons:cobbled_netherrack"

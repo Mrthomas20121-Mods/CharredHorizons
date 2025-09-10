@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "charred_horizons:block/cobbled_netherrack"
-  }
+  "parent": "charred_horizons:block/cobbled_netherrack"
 }

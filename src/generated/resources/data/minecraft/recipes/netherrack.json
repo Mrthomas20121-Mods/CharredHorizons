@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "charred_horizons:polished_netherrack"
+    "item": "charred_horizons:cobbled_netherrack"
   },
   "result": "minecraft:netherrack"
 }

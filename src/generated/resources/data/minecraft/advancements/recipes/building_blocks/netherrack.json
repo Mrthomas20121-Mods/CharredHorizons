@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_polished_netherrack": {
+    "has_cobbled_netherrack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "charred_horizons:polished_netherrack"
+              "charred_horizons:cobbled_netherrack"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_polished_netherrack",
+      "has_cobbled_netherrack",
       "has_the_recipe"
     ]
   ],

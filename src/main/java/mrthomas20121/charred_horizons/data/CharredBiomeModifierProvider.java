@@ -30,7 +30,7 @@ public class CharredBiomeModifierProvider {
 
         context.register(COBBLED_NETHERRACK, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.NETHER_WASTES)),
-                HolderSet.direct(placedFeatures.getOrThrow(CharredPlacedFeatures.COBBLED_NETHERRACK)), GenerationStep.Decoration.UNDERGROUND_ORES)
+                HolderSet.direct(placedFeatures.getOrThrow(CharredPlacedFeatures.COBBLED_NETHERRACK)), GenerationStep.Decoration.LOCAL_MODIFICATIONS)
         );
     }
 }

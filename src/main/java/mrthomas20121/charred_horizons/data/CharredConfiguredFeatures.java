@@ -84,7 +84,7 @@ public class CharredConfiguredFeatures {
         register(context, DROOPING_VINES, CharredFeatures.DROOPING_VINES.get(), FeatureConfiguration.NONE);
         register(context, SHROOMLIGHT, CharredFeatures.SHROOMLIGHT.get(), FeatureConfiguration.NONE);
 
-        register(context, COBBLED_NETHERRACK, Feature.FOREST_ROCK, new BlockStateConfiguration(CharredBlocks.COBBLED_NETHERRACK.get().defaultBlockState()));
+        register(context, COBBLED_NETHERRACK, CharredFeatures.NETHER_BLOB.get(), new BlockStateConfiguration(CharredBlocks.COBBLED_NETHERRACK.get().defaultBlockState()));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

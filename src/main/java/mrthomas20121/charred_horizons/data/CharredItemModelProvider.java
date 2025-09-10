@@ -34,8 +34,8 @@ public class CharredItemModelProvider extends ItemModelProvider {
         handheld(CharredItems.BLAZE_SLAYER.get());
         handheld(CharredItems.WITHERED_SWORD.get());
 
-        basicItemBlock(CharredBlocks.COBBLED_NETHERRACK.get());
-        basicItemBlock(CharredBlocks.POLISHED_NETHERRACK.get());
+        itemBlock(CharredBlocks.COBBLED_NETHERRACK.get());
+        itemBlock(CharredBlocks.POLISHED_NETHERRACK.get());
 
         mushroomItemBlock(CharredBlocks.MYSTIC_MUSHROOM_BLOCK.get());
         mushroomItemBlock(CharredBlocks.MYSTIC_MUSHROOM_STEM.get());
