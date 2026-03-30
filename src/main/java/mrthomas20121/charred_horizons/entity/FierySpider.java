@@ -13,6 +13,7 @@ import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -42,8 +43,6 @@ public class FierySpider extends Spider {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Hoglin.class, true));
-        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, WitherSkeleton.class, true));
     }
 
     static class FierySpiderAttackGoal extends MeleeAttackGoal {

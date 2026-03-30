@@ -94,14 +94,8 @@
       },
       {
         "type": "charred_horizons:sulfuric_skeleton",
-        "maxCount": 4,
-        "minCount": 3,
-        "weight": 5
-      },
-      {
-        "type": "charred_horizons:fiery_spider",
-        "maxCount": 4,
-        "minCount": 3,
+        "maxCount": 3,
+        "minCount": 1,
         "weight": 5
       }
     ],

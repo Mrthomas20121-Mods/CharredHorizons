@@ -22,7 +22,7 @@ public class CharredBlockLoot extends BlockLootSubProvider {
 
         this.add(CharredBlocks.BLIGHT_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
         this.add(CharredBlocks.MYSTIC_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
-        this.add(CharredBlocks.WITHERED_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));
+        this.add(CharredBlocks.WITHERED_NYLIUM.get(), (block) -> this.createSingleItemTableWithSilkTouch(block, Blocks.SOUL_SAND));
         addNetherVinesDropTable(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get());
         addNetherVinesDropTable(CharredBlocks.MYSTIC_VINES.get(), CharredBlocks.MYSTIC_VINES_PLANT.get());
 

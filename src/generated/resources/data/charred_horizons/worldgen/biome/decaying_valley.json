@@ -40,7 +40,7 @@
     [],
     [
       "minecraft:patch_fire",
-      "minecraft:patch_soul_fire",
+      "charred_horizons:patch_soul_fire_withered",
       "minecraft:glowstone_extra",
       "minecraft:glowstone",
       "minecraft:brown_mushroom_nether",
@@ -97,7 +97,7 @@
         "type": "minecraft:wither_skeleton",
         "maxCount": 5,
         "minCount": 5,
-        "weight": 20
+        "weight": 5
       },
       {
         "type": "minecraft:ghast",

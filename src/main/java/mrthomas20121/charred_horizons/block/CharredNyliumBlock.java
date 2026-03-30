@@ -3,22 +3,55 @@ package mrthomas20121.charred_horizons.block;
 import mrthomas20121.charred_horizons.data.CharredConfiguredFeatures;
 import mrthomas20121.charred_horizons.init.CharredBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.features.NetherFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.NyliumBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.lighting.LightEngine;
+import net.minecraftforge.common.IPlantable;
 
 public class CharredNyliumBlock extends NyliumBlock {
 
     public CharredNyliumBlock(Properties p_55057_) {
         super(p_55057_);
+    }
+
+    @Override
+    public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable) {
+        BlockState plant = plantable.getPlant(world, pos.relative(facing));
+        if(state.is(CharredBlocks.WITHERED_NYLIUM.get()) && plant.is(Blocks.WITHER_ROSE)) {
+            return true;
+        }
+        return super.canSustainPlant(state, world, pos, facing, plantable);
+    }
+
+    private static boolean canBeNylium(BlockState p_55079_, LevelReader p_55080_, BlockPos p_55081_) {
+        BlockPos blockpos = p_55081_.above();
+        BlockState blockstate = p_55080_.getBlockState(blockpos);
+        int i = LightEngine.getLightBlockInto(p_55080_, p_55079_, p_55081_, blockstate, blockpos, Direction.UP, blockstate.getLightBlock(p_55080_, blockpos));
+        return i < p_55080_.getMaxLightLevel();
+    }
+
+    public void randomTick(BlockState state, ServerLevel level, BlockPos blockPos, RandomSource random) {
+        if (!canBeNylium(state, level, blockPos)) {
+            if(state.is(CharredBlocks.WITHERED_NYLIUM.get())) {
+                level.setBlockAndUpdate(blockPos, Blocks.SOUL_SAND.defaultBlockState());
+            }
+            else {
+                level.setBlockAndUpdate(blockPos, Blocks.NETHERRACK.defaultBlockState());
+            }
+        }
+
     }
 
     public void performBonemeal(ServerLevel p_221825_, RandomSource p_221826_, BlockPos p_221827_, BlockState p_221828_) {

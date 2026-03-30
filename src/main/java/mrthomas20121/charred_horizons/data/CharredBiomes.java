@@ -44,10 +44,9 @@ public class CharredBiomes {
 
     private static Biome fungal_abyss(HolderGetter<PlacedFeature> placedFeatureHolderGetter, HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter) {
         MobSpawnSettings mobspawnsettings = new MobSpawnSettings.Builder()
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SPORE_CREEPER.get(), 20, 5, 5))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 40, 1, 1))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SPORE_CREEPER.get(), 5, 1, 2))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 80, 1, 1))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.FIERY_SPIDER.get(), 5, 3, 4))
                 .build();
 
         return biomeDefinition(
@@ -93,8 +92,7 @@ public class CharredBiomes {
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIFIED_PIGLIN, 1, 2, 4))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.HOGLIN, 9, 3, 4))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.PIGLIN, 5, 3, 4))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SULFURIC_SKELETON.get(), 5, 3, 4))
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.FIERY_SPIDER.get(), 5, 3, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(CharredEntityTypes.SULFURIC_SKELETON.get(), 5, 1, 3))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2)).build();
         return biomeDefinition(
                 false,
@@ -136,7 +134,7 @@ public class CharredBiomes {
 
     private static Biome decaying_valley(HolderGetter<PlacedFeature> placedFeatureHolderGetter, HolderGetter<ConfiguredWorldCarver<?>> configuredWorldCarverHolderGetter) {
         MobSpawnSettings mobspawnsettings = new MobSpawnSettings.Builder()
-                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 20, 5, 5))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITHER_SKELETON, 5, 5, 5))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.GHAST, 50, 4, 4))
                 .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 1, 4, 4))
                 .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.STRIDER, 60, 1, 2))
@@ -163,7 +161,7 @@ public class CharredBiomes {
                         .addCarver(GenerationStep.Carving.AIR, Carvers.NETHER_CAVE)
                         .addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, NetherPlacements.BASALT_PILLAR)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_FIRE)
-                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_SOUL_FIRE)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, CharredPlacedFeatures.PATCH_SOUL_FIRE_WITHERED)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.GLOWSTONE_EXTRA)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.GLOWSTONE)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, VegetationPlacements.BROWN_MUSHROOM_NETHER)

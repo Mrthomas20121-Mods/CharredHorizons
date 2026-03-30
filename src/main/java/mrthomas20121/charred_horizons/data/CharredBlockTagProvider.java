@@ -24,6 +24,16 @@ public class CharredBlockTagProvider extends BlockTagsProvider {
 
         tag(Tags.Blocks.COBBLESTONE).add(CharredBlocks.COBBLED_NETHERRACK.get());
 
+        tag(BlockTags.SOUL_FIRE_BASE_BLOCKS).add(
+                CharredBlocks.WITHERED_NYLIUM.get(),
+                CharredBlocks.WITHERED_NETHER_WART_BLOCK.get(),
+                CharredBlocks.WITHERED_HYPHAE.get(),
+                CharredBlocks.WITHERED_STEM.get(),
+                CharredBlocks.STRIPPED_WITHERED_HYPHAE.get(),
+                CharredBlocks.STRIPPED_WITHERED_STEM.get(),
+                CharredBlocks.WITHERED_PLANKS.get()
+        );
+
         tag(BlockTags.CLIMBABLE).add(CharredBlocks.DROOPING_VINES.get(), CharredBlocks.DROOPING_VINES_PLANT.get(),
                 CharredBlocks.MYSTIC_VINES.get(), CharredBlocks.MYSTIC_VINES_PLANT.get());
         tag(BlockTags.MUSHROOM_GROW_BLOCK).add(CharredBlocks.BLIGHT_NYLIUM.get(), CharredBlocks.WITHERED_NYLIUM.get(), CharredBlocks.MYSTIC_NYLIUM.get());

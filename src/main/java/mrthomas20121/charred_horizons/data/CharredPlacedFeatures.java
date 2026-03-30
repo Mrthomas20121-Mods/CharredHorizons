@@ -9,6 +9,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -27,6 +28,7 @@ public class CharredPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MYSTIC_VEGETATION = createKey("mystic_vegetation");
     public static final ResourceKey<PlacedFeature> SHROOMLIGHT = createKey("shroomlight");
     public static final ResourceKey<PlacedFeature> COBBLED_NETHERRACK = createKey("cobbled_netherrack");
+    public static final ResourceKey<PlacedFeature> PATCH_SOUL_FIRE_WITHERED = createKey("patch_soul_fire_withered");
 
     public static ResourceKey<PlacedFeature> createKey(String p_255643_) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -44,13 +46,14 @@ public class CharredPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> DROOPING = configuredFeatures.getOrThrow(CharredConfiguredFeatures.DROOPING_VINES);
         Holder<ConfiguredFeature<?, ?>> MUSHROOM = configuredFeatures.getOrThrow(CharredConfiguredFeatures.MYSTIC_MUSHROOM);
         Holder<ConfiguredFeature<?, ?>> SHROOMLIGHT_CONFIG = configuredFeatures.getOrThrow(CharredConfiguredFeatures.SHROOMLIGHT);
+        Holder<ConfiguredFeature<?, ?>> PATCH_SOUL_FIRE_WITHERED_CONFIG = configuredFeatures.getOrThrow(CharredConfiguredFeatures.PATCH_SOUL_FIRE_WITHERED);
         Holder<ConfiguredFeature<?, ?>> COBBLED_NETHERRACK_CONFIG = configuredFeatures.getOrThrow(CharredConfiguredFeatures.COBBLED_NETHERRACK);
 
         register(context, BLIGHT_FUNGUS, BLIGHT, CountOnEveryLayerPlacement.of(5), PlacementUtils.filteredByBlockSurvival(CharredBlocks.BLIGHT_NYLIUM.get()), BiomeFilter.biome());
         register(context, WITHERED_FUNGUS, WITHERED, CountOnEveryLayerPlacement.of(2), PlacementUtils.filteredByBlockSurvival(CharredBlocks.WITHERED_NYLIUM.get()), BiomeFilter.biome());
         register(context, BLIGHT_VEGETATION, VEGETATION, CountOnEveryLayerPlacement.of(6), BiomeFilter.biome());
         register(context, MYSTIC_VEGETATION, MYSTIC_VEG, CountOnEveryLayerPlacement.of(6), PlacementUtils.filteredByBlockSurvival(CharredBlocks.MYSTIC_NYLIUM.get()), BiomeFilter.biome());
-        register(context, WITHERED_VEGETATION, WITHERED_VEG, CountOnEveryLayerPlacement.of(3), BiomeFilter.biome());
+        register(context, WITHERED_VEGETATION, WITHERED_VEG, PlacementUtils.countExtra(4, 0.1f, 1), BiomeFilter.biome());
         register(context, MYSTIC_MUSHROOM, MUSHROOM, CountOnEveryLayerPlacement.of(5), BiomeFilter.biome());
 
         // place vines
@@ -58,7 +61,9 @@ public class CharredPlacedFeatures {
         register(context, SHROOMLIGHT, SHROOMLIGHT_CONFIG, PlacementUtils.countExtra(2, 0.025f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
         register(context, MYSTIC_VINES, VINE, PlacementUtils.countExtra(10, 0.1f, 1), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
 
-        register(context, COBBLED_NETHERRACK, COBBLED_NETHERRACK_CONFIG, CountOnEveryLayerPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        register(context, PATCH_SOUL_FIRE_WITHERED, PATCH_SOUL_FIRE_WITHERED_CONFIG, CountPlacement.of(UniformInt.of(0, 5)), InSquarePlacement.spread(), PlacementUtils.RANGE_4_4, BiomeFilter.biome());
+
+        register(context, COBBLED_NETHERRACK, COBBLED_NETHERRACK_CONFIG, PlacementUtils.countExtra(10, 0.1f, 1), InSquarePlacement.spread(), PlacementUtils.RANGE_10_10, BiomeFilter.biome());
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {

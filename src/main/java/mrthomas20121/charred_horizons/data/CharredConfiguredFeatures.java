@@ -6,6 +6,7 @@ import mrthomas20121.charred_horizons.init.CharredFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,8 @@ import net.minecraft.world.level.levelgen.feature.HugeFungusConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+
+import java.util.List;
 
 public class CharredConfiguredFeatures {
 
@@ -40,6 +43,7 @@ public class CharredConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> MYSTIC_MUSHROOM = createKey("mystic_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SHROOMLIGHT = createKey("shroomlight");
     public static final ResourceKey<ConfiguredFeature<?, ?>> COBBLED_NETHERRACK = createKey("cobbled_netherrack");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_SOUL_FIRE_WITHERED = createKey("patch_soul_fire_withered");
 
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String p_255643_) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(CharredHorizons.MOD_ID, p_255643_));
@@ -83,6 +87,8 @@ public class CharredConfiguredFeatures {
 
         register(context, DROOPING_VINES, CharredFeatures.DROOPING_VINES.get(), FeatureConfiguration.NONE);
         register(context, SHROOMLIGHT, CharredFeatures.SHROOMLIGHT.get(), FeatureConfiguration.NONE);
+
+        register(context, PATCH_SOUL_FIRE_WITHERED, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(Blocks.SOUL_FIRE)), List.of(Blocks.SOUL_SOIL, CharredBlocks.WITHERED_NYLIUM.get())));
 
         register(context, COBBLED_NETHERRACK, CharredFeatures.NETHER_BLOB.get(), new BlockStateConfiguration(CharredBlocks.COBBLED_NETHERRACK.get().defaultBlockState()));
     }

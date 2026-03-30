@@ -1,11 +1,10 @@
 {
   "type": "forge:add_spawns",
   "biomes": "#minecraft:is_nether",
-  "spawners":
-  {
+  "spawners": {
     "type": "charred_horizons:fiery_spider",
-    "weight": 80,
+    "maxCount": 1,
     "minCount": 1,
-    "maxCount": 1
+    "weight": 100
   }
 }
